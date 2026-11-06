@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM KITCHEN</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #fff8ed;
+  text-align: center;
+}
+
+header {
+  background: #17251c;
+  color: white;
+  padding: 25px;
+}
+
+header h1 {
+  color: orange;
+}
+
+.hero {
+  padding: 45px 15px;
+  background: #ffe2b5;
+}
+
+h2 {
+  color: #9c381c;
+}
+
+button {
+  background: #e65326;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+}
+
+.food {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.price {
+  color: green;
+  font-weight: bold;
+}
+
+footer {
+  background: #17251c;
+  color: white;
+  padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🍴 SM KITCHEN</h1>
+<p>Fresh Food | Best Taste</p>
+</header>
+
+<div class="hero">
+<h2>Welcome to SM KITCHEN</h2>
+<p>Delicious Food, Happy Life ❤️</p>
+<button onclick="alert('Welcome to SM KITCHEN!')">
+Welcome
+</button>
+</div>
+
+<h2>Our Food Menu</h2>
+<div class="food">
+
+<img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=800&q=80" style="width:100%; height:180px; object-fit:cover;">
+
+<h3>Chicken Burger</h3>
+
+<p class="price">₹120</p>
+<button onclick="orderFood('Chicken Burger',120)">
+Order Now
+</button>
+</div>
+
+<div class="food">
+
+<img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800"
+style="width:100%; height:180px; object-fit:cover;">
+
+<h3>Pizza</h3>
+
+<p class="price">₹199</p>
+<button onclick="orderFood('Pizza',199)">
+Order Now
+</button>
+</div>
+
+
+
+<div class="food">
+
+<img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=800"
+style="width:100%; height:180px; object-fit:cover; display:block;">
+
+<h3>Chicken Biryani</h3>
+
+<p class="price">₹180</p>
+<button onclick="orderFood('Chicken Biryani',180)">
+Order Now
+</button>
+</div>
+
+
+<footer>
+<h3>SM KITCHEN</h3>
+<p>Thank You For Visiting ❤️</p>
+</footer>
+
+<script>
+function orderFood(name, price) {
+
+  let message = "Hello SM KITCHEN!\n";
+  message += "Food: " + name + "\n";
+  message += "Price: Rs. " + price + "\n";
+  message += "I want to order this food.";
+
+  let number = "916362140480";
+
+  let url = "https://api.whatsapp.com/send?phone="
++ number + "&text=" + encodeURIComponent(message);
+
+window.location.href = url;
+}
+</script>
+
+</body>
+</html>
